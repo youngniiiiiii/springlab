@@ -3,37 +3,40 @@
 <script>
 
     $(function () {
-        register_form.init();
+
     });
 </script>
 
 <div class="col-sm-8 text-left">
     <div class="container">
-        <h1>Register</h1><br/>
+        <h1>Detail Page</h1><br/>
 
-        <form id="register_form" class="form-horizontal text-left well">
+        <form id="update_form" class="form-horizontal text-left well">
             <div class="form-group">
                 <label for="id">ID</label><br/>
                 <div class="col-sm-8">
-                    <input type="text" id="id" name="id" placeholder="Your ID..">
+                    <input type="text" id="id" name="id" value="${gcust.id}" readonly>
                 </div>
             </div>
             <div class="form-group">
                 <label for="pwd">Password</label><br/>
                 <div class="col-sm-8">
-                    <input type="password" id="pwd" name="pwd" placeholder="Password..">
+                    <input type="password" id="pwd" name="pwd" value="${gcust.pwd}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="name">Name</label><br/>
                 <div class="col-sm-8">
-                    <input type="text" id="name" name="name" placeholder="Your Name..">
+                    <input type="text" id="name" name="name" value="${gcust.name}">
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-8">
-                    <button id="register_btn" type="button" class="btn btn-default">Register</button>
+                    <button id="update_btn" type="button" class="btn btn-default">Update</button>
+                </div>
+                <div class="col-sm-8">
+                    <button id="remove_btn" type="button" class="btn btn-default">Remove</button>
                 </div>
             </div>
         </form>
