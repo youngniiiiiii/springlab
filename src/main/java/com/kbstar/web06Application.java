@@ -20,5 +20,4 @@ public class web06Application {
         return resolver;
     }
 
-
 }
