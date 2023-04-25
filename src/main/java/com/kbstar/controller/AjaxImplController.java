@@ -54,6 +54,17 @@ public class AjaxImplController {
         return result;
     }
 
+    @RequestMapping("/chart05")
+    public Object chart05(String year) {
+        JSONArray ja = new JSONArray();
+        for (int i = 1; i <= 12; i++) {
+            Random r = new Random();
+            int num = r.nextInt(100) + 1;
+            ja.add(num);
+        }
+        return ja;
+    }
+
     @RequestMapping("/markers")
     public Object markers(String loc) {
         List<Marker> list = new ArrayList<>();
@@ -73,6 +84,7 @@ public class AjaxImplController {
             list.add(new Marker(108, "삼겹살", "http://www.daum.net", 33.254459, 126.560285, "c.jpeg", "j"));
 
         }
+
         JSONArray ja = new JSONArray();
         for (Marker obj : list) {
             JSONObject jo = new JSONObject();
@@ -87,4 +99,5 @@ public class AjaxImplController {
         }
         return ja;
     }
+
 }
