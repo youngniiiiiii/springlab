@@ -18,7 +18,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="obj" items="${allitem}">
+                    <c:forEach var="obj" items="${cpage.getList()}">
                         <tr>
                             <td><img class="medium_img" src="/uimg/${obj.imgname}"></td>
                             <td>${obj.id}</td>

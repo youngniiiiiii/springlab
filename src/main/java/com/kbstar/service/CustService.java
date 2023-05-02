@@ -1,5 +1,7 @@
 package com.kbstar.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.kbstar.dto.Cust;
 import com.kbstar.frame.KBService;
 import com.kbstar.mapper.CustMapper;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Slf4j
 @Service
 public class CustService implements KBService<String, Cust> {
@@ -21,7 +24,7 @@ public class CustService implements KBService<String, Cust> {
     public void register(Cust cust) throws Exception {
         mapper.insert(cust);
         //mapper.insert(cust);
-        log.info("Send mail.... "+cust.getId());
+        log.info("Send mail.... " + cust.getId());
 
     }
 
@@ -43,5 +46,10 @@ public class CustService implements KBService<String, Cust> {
     @Override
     public List<Cust> get() throws Exception {
         return mapper.selectall();
+    }
+
+    public Page<Cust> getPage(int pageNo) throws Exception {
+        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
+        return mapper.getpage();
     }
 }
