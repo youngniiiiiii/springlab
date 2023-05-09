@@ -5,6 +5,7 @@ import com.kbstar.dto.Cust;
 import com.kbstar.service.CustService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class MainController {
 
+    @Value("${adminserver}")
+    String adminserver;
     @Autowired
     CustService custService;
 
@@ -118,6 +121,7 @@ public class MainController {
 
     @RequestMapping("/websocket")
     public String websocket(Model model) {
+        model.addAttribute("adminserver", adminserver);
         model.addAttribute("center", "websocket");
         return "index";
     }
