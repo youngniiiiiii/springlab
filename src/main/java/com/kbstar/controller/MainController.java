@@ -3,6 +3,7 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Cust;
 import com.kbstar.service.CustService;
+import com.kbstar.util.WeatherUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,7 +27,9 @@ public class MainController {
     private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
-    public String main() {
+    public String main(Model model) throws Exception {
+        String result = WeatherUtil.getWeather1("109");
+        model.addAttribute("weatherinfo", result);
         return "index";
     }
 
