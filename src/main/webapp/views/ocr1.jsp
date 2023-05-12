@@ -9,13 +9,14 @@
 </script>
 <div class="col-sm-8">
     <div class="container">
-        <h1>CFR2</h1><br/>
-        <h2>${result.emotion}</h2>
-        <h2>${result.pose}</h2>
-        <h2>${result.gender}</h2>
-        <h2>${result.age}</h2>
+        <h1>OCR1</h1><br/>
+        <h2>${result.biznum}</h2>
+        <h2>${result.bizname}</h2>
+        <h2>${result.bizowner}</h2>
+        <h2>${result.bizdata}</h2>
+        <h2>${result.bizadd}</h2>
 
-        <form action="/cfr2impl" method="post" enctype="multipart/form-data" id="cfr2_form"
+        <form action="/ocr1impl" method="post" enctype="multipart/form-data" id="ocr1_form"
               class="form-horizontal text-left well">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="img">Image:</label>
@@ -25,7 +26,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" id="cfr2_btn" class="btn btn-default">Send</button>
+                    <button type="submit" id="ocr1_btn" class="btn btn-default">Send</button>
                 </div>
             </div>
 
